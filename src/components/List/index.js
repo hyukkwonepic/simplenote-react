@@ -10,9 +10,11 @@ class List extends React.Component {
           return (
             <ListItem
               key={item.id}
+              id={item.id}
               active={item.id === this.props.activeNote}
               title={item.title}
               contents={item.contents}
+              onClick={this.props.onListItemClick}
             />
           );
         })}
