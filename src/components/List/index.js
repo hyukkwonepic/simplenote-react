@@ -6,11 +6,16 @@ class List extends React.Component {
   render() {
     return (
       <div className="list">
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
+        {this.props.notes.map((item) => {
+          return (
+            <ListItem
+              key={item.id}
+              active={item.id === this.props.activeNote}
+              title={item.title}
+              contents={item.contents}
+            />
+          );
+        })}
       </div>
     );
   }
