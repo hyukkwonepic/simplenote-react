@@ -4,9 +4,9 @@ import './index.css';
 class ListItem extends React.Component {
   render() {
     return (
-      <div className="list-item">
-        <div className="title">제목</div>
-        <div className="list-item-contents">내용 내용 내용 내용 내용 내용 </div>
+      <div className={this.props.active ? "list-item active" : "list-item"}>
+        <div className="title">{this.props.title}</div>
+        <div className="list-item-contents">{this.props.contents}</div>
       </div>
     );
   }
