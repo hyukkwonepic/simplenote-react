@@ -8,8 +8,8 @@ class ListItem extends React.Component {
         className={this.props.active ? "list-item active" : "list-item"}
         onClick={() => this.props.onClick(this.props.index)}
       >
-        <div className="title">{this.props.title}</div>
-        <div className="list-item-contents">{this.props.contents}</div>
+        <div className="title">{this.props.title ? this.props.title : '제목'}</div>
+        <div className="list-item-contents">{this.props.contents ? this.props.contents : '내용'}</div>
       </div>
     );
   }
