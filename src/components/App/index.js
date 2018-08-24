@@ -30,7 +30,7 @@ class App extends React.Component {
             notes={this.state.notes}
             activeNote={this.state.activeNote}
           />
-          <Note />
+          <Note note={this.state.notes.filter((item) => item.id === this.state.activeNote)[0]}/>
         </div>
       </div>
     );
