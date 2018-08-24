@@ -1,0 +1,14 @@
+div.note {
+  padding: 40px 70px 0px 70px;
+}
+
+div.note > div.title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+div.note > div.note-contents {
+  font-size: 16px;
+  font-weight: 400;
+}

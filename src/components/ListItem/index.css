@@ -1,0 +1,23 @@
+div.list-item {
+  padding: 20px 30px;
+  cursor: pointer;
+}
+
+div.list-item:hover {
+  background-color: #f5f5f5;
+}
+
+div.list-item.active {
+  background-color: #EEF3F8;
+}
+
+div.list-item > div.title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+div.list-item > div.list-item-contents {
+  font-size: 14px;
+  font-weight: 400;
+}
