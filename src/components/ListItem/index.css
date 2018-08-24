@@ -20,4 +20,7 @@ div.list-item > div.title {
 div.list-item > div.list-item-contents {
   font-size: 14px;
   font-weight: 400;
+  white-space: nowrap;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
 }
