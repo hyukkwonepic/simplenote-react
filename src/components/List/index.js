@@ -6,12 +6,12 @@ class List extends React.Component {
   render() {
     return (
       <div className="list">
-        {this.props.notes.map((item) => {
+        {this.props.notes.map((item, index) => {
           return (
             <ListItem
-              key={item.id}
-              id={item.id}
-              active={item.id === this.props.activeNote}
+              key={index}
+              index={index}
+              active={index === this.props.activeIndex}
               title={item.title}
               contents={item.contents}
               onClick={this.props.onListItemClick}

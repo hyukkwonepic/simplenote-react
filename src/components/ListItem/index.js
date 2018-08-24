@@ -6,7 +6,7 @@ class ListItem extends React.Component {
     return (
       <div
         className={this.props.active ? "list-item active" : "list-item"}
-        onClick={() => this.props.onClick(this.props.id)}
+        onClick={() => this.props.onClick(this.props.index)}
       >
         <div className="title">{this.props.title}</div>
         <div className="list-item-contents">{this.props.contents}</div>
