@@ -5,12 +5,31 @@ import List from '../List';
 import Note from '../Note';
 
 class App extends React.Component {
+  state = {
+    notes: [
+      {
+        id: 1,
+        title: '무슨 일 이세요?',
+        contents: '안녕하세요? 안녕하세요? 안녕하세요? 안녕하세요? 안녕하세요? 안녕하세요? '
+      },
+      {
+        id: 2,
+        title: '오예',
+        contents: '허쉬초콜릿 드링크는 너무나 맛있어!'
+      }
+    ],
+    activeNote: 1
+  }
+
   render() {
     return (
       <div className="app">
         <Header />
         <div className="container">
-          <List />
+          <List
+            notes={this.state.notes}
+            activeNote={this.state.activeNote}
+          />
           <Note />
         </div>
       </div>
