@@ -5,8 +5,16 @@ class Note extends React.Component {
   render() {
     return (
       <div className="note">
-        <div className="title">{this.props.note.title}</div>
-        <div className="note-contents">{this.props.note.contents}</div>
+        <input
+          className="title"
+          value={this.props.note.title}
+          onChange={(e) => this.props.onEditNote('title', e)}
+        />
+        <textarea
+          className="note-contents"
+          value={this.props.note.contents}
+          onChange={(e) => this.props.onEditNote('contents', e)}
+        />
       </div>
     );
   }

@@ -47,6 +47,15 @@ class App extends React.Component {
     });
   }
 
+  handleEditNote = (type, e) => {
+    e.preventDefault();
+    const notes = [ ...this.state.notes ];
+    notes[this.state.activeIndex][type] = e.target.value;
+    this.setState({
+      notes,
+    });
+  }
+
   render() {
     return (
       <div className="app">
@@ -60,7 +69,10 @@ class App extends React.Component {
             activeIndex={this.state.activeIndex}
             onListItemClick={this.handleListItemClick}
           />
-          <Note note={this.state.notes.filter((item, index) => index === this.state.activeIndex)[0]}/>
+          <Note
+            note={this.state.notes.filter((item, index) => index === this.state.activeIndex)[0]}
+            onEditNote={this.handleEditNote}
+          />
         </div>
       </div>
     );

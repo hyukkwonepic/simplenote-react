@@ -1,14 +1,31 @@
 div.note {
+  width: 100%;
   padding: 40px 70px 0px 70px;
 }
 
-div.note > div.title {
+div.note > input.title {
+  display: block;
   font-size: 24px;
   font-weight: 800;
+  font-family: inherit;
+  border: 0px;
+  margin: 0;
+  padding: 0;
   margin-bottom: 30px;
+  width: 100%;
+  outline: none;
 }
 
-div.note > div.note-contents {
+div.note > textarea.note-contents {
+  display: block;
   font-size: 16px;
   font-weight: 400;
+  font-family: inherit;
+  border: 0px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  resize: none;
 }
