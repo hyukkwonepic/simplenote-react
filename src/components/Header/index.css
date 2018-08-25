@@ -13,11 +13,15 @@ div.header > div.title {
   font-weight: 800;
 }
 
-div.header > div.title > img.logo {
+div.header > div.title > a {
   display: inline-block;
-  height: 30px;
   vertical-align: middle;
   margin-right: 10px;
+}
+
+div.header > div.title > a > img.logo {
+  height: 30px;
+  border-radius: 100%;
 }
 
 div.header > div.title > span {
