@@ -4,17 +4,19 @@ import ListItem from '../ListItem';
 
 class List extends React.Component {
   render() {
+    const { notes, activeId, onListItemClick } = this.props;
     return (
       <div className="list">
-        {this.props.notes.map((item, index) => {
+        {notes.map((item) => {
+          const { id, title, contents } = item;
           return (
             <ListItem
-              key={index}
-              index={index}
-              active={index === this.props.activeIndex}
-              title={item.title}
-              contents={item.contents}
-              onClick={this.props.onListItemClick}
+              key={id}
+              id={id}
+              active={id === activeId}
+              title={title}
+              contents={contents}
+              onClick={onListItemClick}
             />
           );
         })}

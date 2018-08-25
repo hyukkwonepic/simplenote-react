@@ -3,60 +3,53 @@ import './index.css';
 import Header from '../Header';
 import List from '../List';
 import Note from '../Note';
+import { generateId } from '../../utils';
 
 class App extends React.Component {
   state = {
-    notes: [
-      {
-        title: '무슨 일 이세요?',
-        contents: '안녕하세요? 안녕하세요? 안녕하세요? 안녕하세요? 안녕하세요? 안녕하세요? '
-      },
-      {
-        title: '오예',
-        contents: '허쉬초콜릿 드링크는 너무나 맛있어!'
-      }
-    ],
-    activeIndex: 0
+    notes: [],
+    activeId: null
   }
 
   handleListItemClick = (id) => {
-    this.setState({
-      activeIndex: id
-    });
+    this.setState({ activeId: id });
   }
 
   handleAddNote = () => {
-    const index = this.state.notes.length;
+    const id = generateId();
     this.setState({
       notes: [
         ...this.state.notes,
         {
+          id,
           title: '제목',
           contents: '내용',
         },
       ],
-      activeIndex: index
+      activeId: id,
     });
   }
 
   handleDeleteNote = () => {
-    const notes = this.state.notes.filter((item, index) => index !== this.state.activeIndex);
+    const notes = this.state.notes.filter((item) => item.id !== this.state.activeId);
     this.setState({
       notes,
-      activeIndex: 0,
+      activeId: notes.length === 0 ? null : notes[0].id,
     });
   }
 
   handleEditNote = (type, e) => {
-    e.preventDefault();
     const notes = [ ...this.state.notes ];
-    notes[this.state.activeIndex][type] = e.target.value;
+    const note = notes.find((item) => item.id === this.state.activeId)
+    note[type] = e.target.value;
     this.setState({
       notes,
     });
   }
 
   render() {
+    const { notes, activeId } = this.state;
+    const activeNote = notes.filter((item) => item.id === activeId)[0];
     return (
       <div className="app">
         <Header
@@ -65,14 +58,13 @@ class App extends React.Component {
         />
         <div className="container">
           <List
-            notes={this.state.notes}
-            activeIndex={this.state.activeIndex}
+            notes={notes}
+            activeId={activeId}
             onListItemClick={this.handleListItemClick}
           />
-          <Note
-            note={this.state.notes.filter((item, index) => index === this.state.activeIndex)[0]}
-            onEditNote={this.handleEditNote}
-          />
+          {
+            activeNote && <Note note={activeNote} onEditNote={this.handleEditNote} />
+          }
         </div>
       </div>
     );
