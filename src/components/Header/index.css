@@ -13,6 +13,17 @@ div.header > div.title {
   font-weight: 800;
 }
 
+div.header > div.title > img.logo {
+  display: inline-block;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+div.header > div.title > span {
+  vertical-align: middle;
+}
+
 div.header > div.buttons > button {
   border: 0px;
   font-size: 14px;
