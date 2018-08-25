@@ -16,7 +16,7 @@ class List extends React.Component {
               active={id === activeId}
               title={title}
               contents={contents}
-              onClick={onListItemClick}
+              onClick={() => onListItemClick(id)}
             />
           );
         })}
