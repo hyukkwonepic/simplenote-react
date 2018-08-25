@@ -21,6 +21,6 @@ div.list-item > div.list-item-contents {
   font-size: 14px;
   font-weight: 400;
   white-space: nowrap;
-  overflow-y: hidden;
+  overflow-x: hidden;
   text-overflow: ellipsis;
 }

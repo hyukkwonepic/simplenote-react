@@ -17,4 +17,6 @@ div.header > div.buttons > button {
   border: 0px;
   font-size: 14px;
   font-weight: 700;
+  background-color: #fff;
+  cursor: pointer;
 }
