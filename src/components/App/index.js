@@ -7,8 +7,14 @@ import { generateId } from '../../utils';
 
 class App extends React.Component {
   state = {
-    notes: [],
-    activeId: null
+    notes: [
+      {
+        id: 'initial',
+        title: '심플노트에 오신것을 환영합니다!',
+        contents: '차근차근 만들면서 리액트를 익혀보세요! 👻\n\n헤더의 추가 버튼을 클릭하여 새로운 노트를 만드실 수 있습니다.'
+      }
+    ],
+    activeId: 'initial'
   }
 
   handleListItemClick = (id) => {
