@@ -1,5 +1,5 @@
 div.app > div.container {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: calc(100vh - 50px);
 }
